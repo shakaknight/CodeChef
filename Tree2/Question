@@ -1,0 +1,41 @@
+PROBLEM:
+There are NN sticks placed in a straight line where i^{th}i 
+th
+  stick has height A_i.A 
+i
+​	
+ . The task is to cut all the sticks completely i.e. the height of each stick becomes 00 by performing below operations. In one operation:
+
+Choose an integer HH and fix a cutter at height HH from the ground.
+The cutter moves from the 1^{st}1 
+st
+  to the N^{th}N 
+th
+  stick and cuts the upper part of all the sticks with a height greater than HH.
+Suppose M(M≤N)M(M≤N) upper parts were cut during the cutting process. You need to choose HH such that all the MM parts are of equal length.
+If A=[5,3,5]A=[5,3,5], some valid values for HH are 3, 43,4 which will cut upper parts of 22 sticks with length [2,2][2,2] and [1,1][1,1] respectively. H = 2H=2 is an invalid choice because this will cut upper parts of 33 sticks with length [3,1,3][3,1,3] i.e unequal length of upperparts. The task is to print the minimum number of operations needed to cut all the sticks completely.
+
+The problem is to be solved for TT number of test cases.
+
+QUICK EXPLANATION:
+The minimum number of operations needed to cut all the sticks completely is the number of non- zero distinct elements in the array AA.
+EXPLANATION:
+There are 3 simple observations leading to the solution:
+
+Observation 1:
+
+Sticks with zero height (A_i = 0)(A 
+i
+​	
+ =0) can be removed from the array AA as there won’t be any impact on their height in any operation.
+Observation 2:
+
+Any number of sticks having the same height can be replaced with one stick of that height. While performing a cutting operation, the cutter moves from 1^{st}1 
+st
+  to the N^{th}N 
+th
+  stick and cuts the upper part of all the sticks with a height greater than HH, and it will lead to an identical impact on the sticks with the same height.
+Observation 3:
+
+From the above 22 observations, we have an array with non-zero and distinct values. Now in one operation, we can fix the cutter at the height of the second tallest stick. After performing the operation, the tallest stick will become equal to the height of the second tallest stick. Now, as these two sticks are having the same height can be replaced with one stick according to observation 2.
+Thus, the minimum number of operations needed can be calculated as the number of non-zero distinct elements in the array AA.
