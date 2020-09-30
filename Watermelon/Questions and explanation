@@ -1,0 +1,40 @@
+DIFFICULTY:
+Cakewalk
+
+PREREQUISITES:
+Basic Math, Observations
+
+PROBLEM:
+You’re given a sequence of nn integers a_1, a_2,.... a_n
+
+ . You may perform some number (possibly zero) of the following operation: choose some ii, and reduce the value of a_ia 
+i
+
+  by ii. Find out if it’s possible to make the sum of all the integers equal to 00.
+
+QUICK EXPLANATION:
+ Main solution
+It’s possible if the initial sum is at least 00, otherwise impossible.
+
+EXPLANATION:
+ Main solution
+Notice that the operations you do can only decrease the overall sum. So if the overall sum is initially less than 00, there’s no way to bring that sum up to 00 using the operations.
+
+Otherwise, say the sum is xx, where x \geq 0x≥0. You can do the operation on the first element and decrease a_1a 
+1
+
+  by 11, xx times. Thus, it’s always possible if x \geq 0x≥0.
+
+TIME COMPLEXITY:
+ Main solution
+O(n)O(n) for reading in the input and computing the sum.
+--------------------------------------------------------------------------------
+Example Input
+2
+1
+-1
+2
+1 2
+Example Output
+NO
+YES
